@@ -1,0 +1,42 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-item{
+	color: black;
+	border-bottom: 1px solid;
+	width:95%;
+}
+
+.comment-body{
+	max-width: 400px;
+	word-wrap: break-word;
+	position: relative;
+	left: 5%;
+}
+
+.comment-author{
+	font-weight: bold;
+	display: inline-block;
+	width: 95%;
+}
+
+.delete-comm-icon{
+	display: inline;
+	font-size: 15px;
+	color:red;
+}
+
+.author-div{
+	padding: 5px;
+}
+
+.red{
+	color:red;
+}
+
+.comment-text-area{
+	width: 100%;
+	resize: none;
+	border: 1px solid;
+	border-radius: 3px;
+}

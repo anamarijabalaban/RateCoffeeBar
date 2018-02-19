@@ -1,0 +1,26 @@
+
+<%
+if current_user
+  user_name = current_user.email
+else
+  user_name = "Anonymous"
+end
+%>
+
+<%= form_with(model: [ @bar, @bar.comments.build ]) do |form| %>
+  <p>
+    <%= form.hidden_field :commenter, value:user_name %>
+  </p>
+  <div class="row">
+	<div class="col-sm-9">
+		<p>
+			<%= form.text_area :body, placeholder: "Write a comment", class: "comment-text-area" %>
+		</p>
+	</div>
+	<div class="col-sm-2">
+		<p>
+			<%= form.submit "Comment" %>
+		</p>
+	</div>
+  
+<% end %>

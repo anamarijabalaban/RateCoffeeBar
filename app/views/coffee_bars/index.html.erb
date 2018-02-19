@@ -1,0 +1,23 @@
+<h1>CoffeeBars</h1>
+<p></p>
+ <% if current_user.try(:admin?) %>
+	<%= link_to 'New coffeBar', new_coffee_bar_path %>
+<%	end  %>
+ 
+ 
+ 
+  <% @bars.each do |bar| %>
+    <div class="bar-item">
+      <h3><%= bar.name %></h2>
+      <label><%= bar.address %></label>
+      <%= link_to 'More info', coffee_bar_path(bar) %>
+	  
+	  <% if current_user.try(:admin?) %>
+	  <%= link_to 'Edit', edit_coffee_bar_path(bar) %>
+	  <%= link_to 'Destroy', coffee_bar_path(bar),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+	  <% end %>
+    </div>
+  <% end %>
+</table>

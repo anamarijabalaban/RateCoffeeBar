@@ -1,0 +1,19 @@
+
+<div class="comment-item">
+<div class="author-div">
+<h4 class="comment-author">
+  <%= comment.commenter %>
+</h4>
+<div class="delete-comm-icon">
+  <%= link_to [comment.coffee_bar, comment], method: :delete,
+               data: { confirm: 'Are you sure?' } do %>
+		<span class="glyphicon glyphicon-remove red"></span>
+  <% end %>
+</div>
+</div>
+<p class="comment-body">
+  <%= comment.body %>
+</p>
+
+
+</div>

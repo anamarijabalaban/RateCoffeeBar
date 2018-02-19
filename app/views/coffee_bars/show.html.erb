@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-sm-6">
+		<p>
+			<strong>Name:</strong>
+			<%= @bar.name %>
+		</p> 
+		<p>
+			<strong>Address:</strong>
+			<%= @bar.address %>
+		</p>
+</div>
+<div class="col-sm-6">
+	<h2>Comments</h2>
+	<div class="comment-list">
+		<%= render @bar.comments %>
+	</div>
+	<%= render 'comments/form' %>
+</div>
+</div>
+<%= link_to 'Back', coffee_bars_path %>

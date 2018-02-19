@@ -1,0 +1,13 @@
+// Place all the styles related to the CoffeeBars controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.bar-item{
+display: block;
+width: 50%;
+border-right: 3px solid;
+}
+
+.comment-list{
+	height: 400px;
+	overflow-y: auto;
+}
