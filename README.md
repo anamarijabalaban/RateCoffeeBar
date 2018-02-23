@@ -22,5 +22,8 @@ Things you may want to cover:
 
 * ...
 
+#Screenshots
+
+![Application screenshot](https://github.com/anamarijabalaban/RateCoffeeBar/blob/master/screenshots/screenshot1.jpeg)
 
 
