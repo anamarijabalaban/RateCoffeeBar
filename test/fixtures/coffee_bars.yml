@@ -3,9 +3,9 @@
 one:
   name: MyString
   address: MyString
-  grade: 1.5
+  info: MyText
 
 two:
   name: MyString
   address: MyString
-  grade: 1.5
+  info: MyText

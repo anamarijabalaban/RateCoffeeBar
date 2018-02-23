@@ -2,12 +2,79 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .bar-item{
-display: block;
-width: 50%;
-border-right: 3px solid;
+	display: block;
+	border-right: 3px solid;
+	margin-bottom:20px;
+}
+
+.bar-list{
+	height: 500px;
+	overflow: auto;
 }
 
 .comment-list{
 	height: 400px;
 	overflow-y: auto;
+}
+
+.averages{
+	margin-right: 10px;
+}
+
+.average-star{
+	margin-bottom: 10px;
+}
+
+.more-info-btn:hover{
+	color: black;
+	font-weight: bold;
+}
+
+#bar-name{
+	margin-top:0
+}
+
+.links{
+	position: relative;
+	float: right;
+}
+
+.general-average-star{
+	background-image: url("/assets/mid-star.png"); 
+	width: 62px; 
+	height: 62px;
+	display: inline-block;
+}
+
+.general-average-value{
+	position: relative; 
+	font-size: 18px; 
+	text-align: center; 
+	line-height: 70px;
+}
+
+.general-star{
+	padding: 5px 0 20px 0;
+}
+
+#num-of-comments{
+	position: relative; 
+	text-align: center; 
+	line-height: 10px;
+}
+
+#bar-name-show{
+	font-size: 55px;
+}
+
+#bar-address-show{
+	font-size: 23px;
+}
+
+.bar-info-show{
+	font-size: 18px;
+}
+
+.black{
+	color: black;
 }

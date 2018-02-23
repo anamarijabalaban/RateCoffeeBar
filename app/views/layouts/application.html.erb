@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>RateCoffeeBar</title>
+	<link rel="shortcut icon" href="/assets/coffee-cup.png" />
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,51 +12,49 @@
 
   <body>
 
-<nav class="navbar navbar-inverse navbar-static-top">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle Navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Some Store</a>
-    </div> <!-- end div class="navbar-header" -->
-    <div class="collapse navbar-collapse navbar-right">
-      <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-		<li class="navbar-text"> Logged in as <strong><%= current_user.email %></strong>.</li>
-		<li class="nav-item"><%= link_to edit_user_registration_path, :class => 'navbar-link' do %>
-			<span class="glyphicon glyphicon-edit"> Edit</span>
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only">Toggle Navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <%= link_to "RateCoffeeBar",coffee_bars_path, :class => 'navbar-brand' %>
+		</div> 
+		<div class="collapse navbar-collapse navbar-right">
+		  <ul class="nav navbar-nav">
+			<% if user_signed_in? %>
+			<li class="navbar-text"> Logged in as <strong><%= current_user.email %></strong>.</li>
+			<li class="nav-item"><%= link_to edit_user_registration_path, :class => 'navbar-link' do %>
+				<span class="glyphicon glyphicon-edit"> Edit</span>
+			<% end %>
+			</li>
+			<li class="nav-item"><%= link_to destroy_user_session_path, method: :delete, :class => 'navbar-link'  do %>
+				<span class="glyphicon glyphicon-log-out"> Logout</span>
+			<% end %>
+			</li>
+		<% else %>
+			<li class="nav-item"><%= link_to new_user_registration_path, :class => 'navbar-link' do %>
+				<span class="glyphicon glyphicon-user"> Signup</span>
+			<% end %>
+			</li>
+			<li class="nav-item"><%= link_to new_user_session_path, :class => 'navbar-link'  do %>
+				<span class="glyphicon glyphicon-log-in"> Login</span>
+			<% end %>
+			</li>
 		<% end %>
-		</li>
-		<li class="nav-item"><%= link_to destroy_user_session_path, method: :delete, :class => 'navbar-link'  do %>
-			<span class="glyphicon glyphicon-log-out"> Logout</span>
+		  </ul> 
+		</div> 
+	</nav>
+	<div class="container">    
+		<% if notice %>
+			<p class="alert alert-success"><%= notice %></p>
 		<% end %>
-		</li>
-	<% else %>
-		<li class="nav-item"><%= link_to new_user_registration_path, :class => 'navbar-link' do %>
-			<span class="glyphicon glyphicon-user"> Signup</span>
+		<% if alert %>
+			<p class="alert alert-danger"><%= alert %></p>
 		<% end %>
-		</li>
-		<li class="nav-item"><%= link_to new_user_session_path, :class => 'navbar-link'  do %>
-			<span class="glyphicon glyphicon-log-in"> Login</span>
-		<% end %>
-		</li>
-	<% end %>
-      </ul> 
-    </div> <!-- end div class="collapse navbar-collapse" -->
-  <!-- end div class="container" -->
-</nav>
- <div class="container">    
-	<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-      <%= yield %>
-    
+		<%= yield %>
 	</div>
   </body>
 </html>

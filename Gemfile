@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
-
+gem 'ratyrate'
 gem 'devise'
 gem 'jquery-rails'
 # Use CoffeeScript for .coffee assets and views
