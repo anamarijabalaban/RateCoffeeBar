@@ -1,7 +1,6 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# RateCoffeeBar
+Simple web aplication for coffee bar rating.
 
 Things you may want to cover:
 
@@ -22,3 +21,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
