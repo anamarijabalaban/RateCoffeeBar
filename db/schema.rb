@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220190014) do
+ActiveRecord::Schema.define(version: 20180219150546) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "average_caches", force: :cascade do |t|
-    t.integer "rater_id"
+    t.bigint "rater_id"
     t.string "rateable_type"
-    t.integer "rateable_id"
+    t.bigint "rateable_id"
     t.float "avg", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180220190014) do
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
-    t.integer "coffee_bar_id"
+    t.bigint "coffee_bar_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["coffee_bar_id"], name: "index_comments_on_coffee_bar_id"
@@ -42,7 +45,7 @@ ActiveRecord::Schema.define(version: 20180220190014) do
 
   create_table "overall_averages", force: :cascade do |t|
     t.string "rateable_type"
-    t.integer "rateable_id"
+    t.bigint "rateable_id"
     t.float "overall_avg", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,9 +53,9 @@ ActiveRecord::Schema.define(version: 20180220190014) do
   end
 
   create_table "rates", force: :cascade do |t|
-    t.integer "rater_id"
+    t.bigint "rater_id"
     t.string "rateable_type"
-    t.integer "rateable_id"
+    t.bigint "rateable_id"
     t.float "stars", null: false
     t.string "dimension"
     t.datetime "created_at", null: false
@@ -64,7 +67,7 @@ ActiveRecord::Schema.define(version: 20180220190014) do
 
   create_table "rating_caches", force: :cascade do |t|
     t.string "cacheable_type"
-    t.integer "cacheable_id"
+    t.bigint "cacheable_id"
     t.float "avg", null: false
     t.integer "qty", null: false
     t.string "dimension"
@@ -92,4 +95,5 @@ ActiveRecord::Schema.define(version: 20180220190014) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "coffee_bars"
 end
