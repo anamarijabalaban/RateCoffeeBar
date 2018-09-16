@@ -1,26 +1,15 @@
-
 # RateCoffeeBar
-Simple web aplication for coffee bar rating.
+Simple web aplication for rating coffee bars.
 
-Things you may want to cover:
+# Screenshots
 
-* Ruby version
+Home screen for admin user.
+![Application screenshot](https://github.com/anamarijabalaban/RateCoffeeBar/blob/master/screenshots/screenshot1.jpeg)
 
-* System dependencies
+More info about coffee bar for anonymous user.
+![Application screenshot](https://github.com/anamarijabalaban/RateCoffeeBar/blob/master/screenshots/screenshot2.jpeg)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+More info about coffee bar for logged user.
+![Application screenshot](https://github.com/anamarijabalaban/RateCoffeeBar/blob/master/screenshots/screenshot3.jpeg)
 
 
